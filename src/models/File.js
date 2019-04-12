@@ -20,7 +20,7 @@ const File = new mongoose.Schema(
     }
 );
 //modificar para o heroku
-File.virtual("url").get(function(){
+File.virtual("url").get(function() {
     const url = process.env.URL || 'http://localhost:3333'
     return `${url}/files/${encodeURIComponent(this.path)}`;
 });
